@@ -20,6 +20,11 @@ app.on('ready', function () {
 
   }));
 
+  //win.loadURL('https://github.com/');
+
+
+
+
 
   //dialog.showMessageBox(win, {
   //type: 'info',
