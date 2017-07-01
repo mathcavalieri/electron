@@ -16,6 +16,24 @@ angular.module('PackageGenerator', ['ngAnimate', "ngCookies", 'ngRoute', 'ngReso
                     reader.readAsDataURL(changeEvent.target.files[0]);
                 });
             }
-        }
+        };
+    }])
+    .directive("piQuestion", [function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'client/shared/directives/piQuestion.html',
+            controller: function ($scope) {
+                $scope.changeValue = function (value) {
+                    if ($scope.parentQuestion) {
+                        $scope.parentQuestion[$scope.model] = value;
+                    }
+                };
+            },
+            scope: {
+                question: '=',
+                model: '=',
+                parentQuestion: '='
+            }
+        };
     }]);
 
