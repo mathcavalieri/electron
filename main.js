@@ -1,3 +1,4 @@
+"use strict";
 const electron = require('electron');
 const app = electron.app;
 const url = require('url');
@@ -6,12 +7,12 @@ const dialog = electron.dialog;
 const Menu = electron.Menu;
 const MenuItem = electron.MenuItem;
 
-let win
+let win;
 app.on('ready', function () {
 
   win = new electron.BrowserWindow({
-    width: 500,
-    height: 500
+    width: 600,
+    height: 600
   });
 
   win.loadURL(url.format({
@@ -19,6 +20,8 @@ app.on('ready', function () {
     protocol: 'file:'
 
   }));
+
+  win.webContents.openDevTools({ mode: 'bottom' });
 
   //win.loadURL('https://github.com/');
 
